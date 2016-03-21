@@ -1,0 +1,25 @@
+<div class="card">
+	<div class="card-header"><strong>Dragons</strong></div>
+
+	<div *ngFor="#datum of data #i=index">
+
+    	<ul class="list-group list-group-flush">
+	    	<a [bsCollapse]="{collapsed: 'fa fa-plus-square-o', expanded: 'fa fa-minus-square-o'}" data-toggle="collapse" [href]="'#desc-block-' + i" aria-expanded="false" [attr.aria-controls]="'desc-block-' + i">
+            	<li class="list-group-item">
+            		<div class="row">
+						<div class="col-lg-11">{{datum?.title}}</div>
+						<div class="col-lg-1"><i bsCollapseIcon></i></div>
+		            </div>
+            	</li>
+        	</a>
+	  	</ul>
+
+		<div [id]="'desc-block-' + i" class="collapse">
+			<div class="card-block">
+				{{datum?.content}}
+			</div>
+	  	</div>
+
+    </div>
+</div>
+		
